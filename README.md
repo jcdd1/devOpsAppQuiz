@@ -14,6 +14,7 @@
 [50%] Completar la implementacion usando:
 
 - https://mockapi.io/
+- https://www.baeldung.com/spring-boot-json
 - https://www.baeldung.com/spring-resttemplate-post-json
 - Postman
 
