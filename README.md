@@ -13,7 +13,7 @@
 
 [50%] Completar la implementacion usando:
 
-- https://mockapi.io/
+- https://mockapi.io/ Crear llamados a APis para ganerar datos aleatorios y completar las estructuras si es necesario
 - https://www.baeldung.com/spring-boot-json
 - https://www.baeldung.com/spring-resttemplate-post-json
 - Postman
