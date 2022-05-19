@@ -48,7 +48,6 @@ public class ManejoUsuarioService implements ManejoUsuarioServiceInt{
         return usuarioDto;
     }
 
-
     public UsuarioDto updateUsuario(UsuarioDto usuarioDto ) throws IOException {
         String url = "https://6285638196bccbf32d622180.mockapi.io/api/v1/users/";
         HttpHeaders headers = new HttpHeaders();
