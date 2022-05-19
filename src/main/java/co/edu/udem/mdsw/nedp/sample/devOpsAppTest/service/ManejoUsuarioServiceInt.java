@@ -8,4 +8,8 @@ public interface ManejoUsuarioServiceInt {
 
      UsuarioDto getUsuario(Integer id);
      List<UsuarioDto> getUsuarios();
+     UsuarioDto saveUsuarios(UsuarioDto usuario);
+     UsuarioDto updateUsuario(UsuarioDto usuarioDto);
+     UsuarioDto deleteUsuario(Integer id);
+
 }
