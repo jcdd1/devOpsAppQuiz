@@ -10,6 +10,6 @@ public interface ManejoUsuarioServiceInt {
      UsuarioDto getUsuario(Integer id);
      List<UsuarioDto> getUsuarios();
      UsuarioDto saveUsuarios(UsuarioDto usuario) throws IOException;
-     UsuarioDto updateUsuario(UsuarioDto usuarioDto )throws IOException;
+     UsuarioDto updateUsuario(Integer id, UsuarioDto usuarioDto )throws IOException;
      UsuarioDto deleteUsuario(Integer id)throws IOException;
 }

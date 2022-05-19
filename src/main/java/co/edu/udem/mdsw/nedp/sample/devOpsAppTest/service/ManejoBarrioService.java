@@ -1,6 +1,7 @@
 package co.edu.udem.mdsw.nedp.sample.devOpsAppTest.service;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,9 +32,11 @@ public class ManejoBarrioService implements ManejoBarrioServiceInt {
     }
         
         public List<BarrioDto> getBarrios(){           
-            BarriosList BarriosList = restTemplate.getForObject(
-                    URL, BarriosList.class);
-            return BarriosList.getBarrioList();
+            
+            BarrioDto[] arr =  restTemplate.getForObject(
+            URL, BarrioDto[].class);
+    List<BarrioDto> list = Arrays.asList(arr);
+    return list;
     }
     
     public BarrioDto saveBarrios(BarrioDto barrio) throws IOException{      

@@ -23,7 +23,7 @@ public class RestDevOpsController {
         return ResponseEntity.ok().body(manejoUsuarioService.getUsuario(id));
     }
 
-    @GetMapping(value = "/usuarios}", produces = "application/json")
+    @GetMapping(value = "/usuarios", produces = "application/json")
     public ResponseEntity<List<UsuarioDto>> getUsuario(){
         return ResponseEntity.ok().body(manejoUsuarioService.getUsuarios());
     }
@@ -33,9 +33,9 @@ public class RestDevOpsController {
         return ResponseEntity.ok().body(manejoUsuarioService.saveUsuarios(usuarioDto));
     }
 
-    @PostMapping(value = "/usuarios/", produces = "application/json")
-    public ResponseEntity<UsuarioDto> updateUsuario(@RequestBody UsuarioDto usuarioDto) throws IOException{
-        return ResponseEntity.ok().body(manejoUsuarioService.updateUsuario(usuarioDto));
+    @PutMapping(value = "/usuarios/{id}", produces = "application/json")
+    public ResponseEntity<UsuarioDto> updateUsuario(@PathVariable Integer id, @RequestBody UsuarioDto usuarioDto) throws IOException{
+        return ResponseEntity.ok().body(manejoUsuarioService.updateUsuario(id, usuarioDto));
     }
 
     @DeleteMapping(value = "/usuarios/{id}", produces = "application/json")

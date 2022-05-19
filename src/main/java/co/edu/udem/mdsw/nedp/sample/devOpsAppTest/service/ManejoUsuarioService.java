@@ -1,6 +1,7 @@
 package co.edu.udem.mdsw.nedp.sample.devOpsAppTest.service;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,9 +34,11 @@ public class ManejoUsuarioService implements ManejoUsuarioServiceInt{
 
     public List<UsuarioDto> getUsuarios(){
         String url = "https://6285638196bccbf32d622180.mockapi.io/api/v1/users/";
-        UsuariosList usuariosList = restTemplate.getForObject(
-                url, UsuariosList.class);
-        return usuariosList.getUsuarioList();
+        
+        UsuarioDto[] arr =  restTemplate.getForObject(
+                url, UsuarioDto[].class);
+        List<UsuarioDto> list = Arrays.asList(arr);
+        return list;
     }
 
     public UsuarioDto saveUsuarios(UsuarioDto usuario) {
@@ -49,8 +52,8 @@ public class ManejoUsuarioService implements ManejoUsuarioServiceInt{
         return usuarioDto;
     }
 
-    public UsuarioDto updateUsuario(UsuarioDto usuarioDto )  {
-        String url = "https://6285638196bccbf32d622180.mockapi.io/api/v1/users/";
+    public UsuarioDto updateUsuario(Integer id ,UsuarioDto usuarioDto )  {
+        String url = "https://6285638196bccbf32d622180.mockapi.io/api/v1/users/"+ Integer.toString(id);
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<UsuarioDto> entity = new HttpEntity<>(usuarioDto,headers);
