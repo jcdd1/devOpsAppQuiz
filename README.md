@@ -16,7 +16,7 @@
 - Utilizar bien la responsabilidad de la clase, es decir, los nombres de los métodos no corresponden a lo que realmente hacen en la clase  _RestBarriosController_.
 - Las clases  _EmpleoDto_ y _PaisDto_ no tienen una definición de métodos o propiedades; aun que esto en sí no es un problema para que sea un API REST.
 - Hacen falta las pruebas unitarios para los servicios y otros metodos importantes; aun que esto en sí no es un problema para que sea un API REST.
-
+- La interfaz _ManejoUsuarioServiceInt_ no contiene los metodos _saveUsuarios_, _editUsuario_, _deleteUsuario_, estos metodos son parte del modelo CRUD y deberian estar para poder ser usados en el controlador.
 
 [50%] Completar la implementacion usando: hacer commit en el master branch
 
