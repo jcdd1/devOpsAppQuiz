@@ -1,7 +1,8 @@
 package co.edu.udem.mdsw.nedp.sample.devOpsAppTest.service;
 
-import co.edu.udem.mdsw.nedp.sample.devOpsAppTest.entities.UsuarioDto;
-import co.edu.udem.mdsw.nedp.sample.devOpsAppTest.utils.UsuariosList;
+import java.io.IOException;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -9,8 +10,8 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.io.IOException;
-import java.util.List;
+import co.edu.udem.mdsw.nedp.sample.devOpsAppTest.entities.UsuarioDto;
+import co.edu.udem.mdsw.nedp.sample.devOpsAppTest.utils.UsuariosList;
 
 @Service
 public class ManejoUsuarioService implements ManejoUsuarioServiceInt{
