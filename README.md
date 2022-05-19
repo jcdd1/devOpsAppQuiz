@@ -10,6 +10,10 @@
 - https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
 - https://github.com/othneildrew/Best-README-Template
 - "RestBarriosController" no retorna un objeto http
+- Falta añadir comportamiento de @controlador
+- Falta la logica del negocio para Barrios
+- Utilizar bien la responsabilidad de la clase
+- Falta manejar las instacia del servicio, ya que no hay servicio
 
 
 [50%] Completar la implementacion usando: hacer commit en el master branch
