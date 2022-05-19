@@ -15,6 +15,7 @@ public class RestBarriosController {
     public BarrioDto createPerson(@RequestBody BarrioDto barrioDto ) {
             return new BarrioDto();
 
+        return barrioDto;
     }
 
     @PostMapping(
@@ -22,5 +23,6 @@ public class RestBarriosController {
     public BarrioDto updatePerson(@RequestBody BarrioDto barrioDto) {
         return new BarrioDto();
 
+        return barrioDto;
     }
 }

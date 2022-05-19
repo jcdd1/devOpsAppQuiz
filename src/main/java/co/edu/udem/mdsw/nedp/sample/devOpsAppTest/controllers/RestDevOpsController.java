@@ -4,9 +4,7 @@ import co.edu.udem.mdsw.nedp.sample.devOpsAppTest.entities.UsuarioDto;
 import co.edu.udem.mdsw.nedp.sample.devOpsAppTest.service.ManejoUsuarioServiceInt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,5 +26,21 @@ public class RestDevOpsController {
     public ResponseEntity<List<UsuarioDto>> getUsuario(){
         return ResponseEntity.ok().body(manejoUsuarioService.getUsuarios());
     }
+
+    @PostMapping(value = "/usuarios/", produces = "application/json")
+    public ResponseEntity<UsuarioDto> saveUsuarios(@RequestBody UsuarioDto usuarioDto){
+        return ResponseEntity.ok().body(manejoUsuarioService.saveUsuarios(usuarioDto));
+    }
+
+    @PostMapping(value = "/usuarios/", produces = "application/json")
+    public ResponseEntity<UsuarioDto> updateUsuario(@RequestBody UsuarioDto usuarioDto){
+        return ResponseEntity.ok().body(manejoUsuarioService.updateUsuario(usuarioDto));
+    }
+
+    @DeleteMapping(value = "/usuarios/{id}", produces = "application/json")
+    public ResponseEntity<UsuarioDto> deleteUsuario(@PathVariable Integer id){
+        return ResponseEntity.ok().body(manejoUsuarioService.deleteUsuario(id));
+    }
+
 
 }

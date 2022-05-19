@@ -38,7 +38,7 @@ public class ManejoUsuarioService implements ManejoUsuarioServiceInt{
         return usuariosList.getUsuarioList();
     }
 
-    public UsuarioDto saveUsuarios(UsuarioDto usuario)   throws IOException {
+    public UsuarioDto saveUsuarios(UsuarioDto usuario) {
         String url = "https://6285638196bccbf32d622180.mockapi.io/api/v1/users/";
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
@@ -49,8 +49,7 @@ public class ManejoUsuarioService implements ManejoUsuarioServiceInt{
         return usuarioDto;
     }
 
-
-    public UsuarioDto updateUsuario(UsuarioDto usuarioDto ) throws IOException {
+    public UsuarioDto updateUsuario(UsuarioDto usuarioDto )  {
         String url = "https://6285638196bccbf32d622180.mockapi.io/api/v1/users/";
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
@@ -59,7 +58,7 @@ public class ManejoUsuarioService implements ManejoUsuarioServiceInt{
         return usuarioDto;
     }
 
-    public UsuarioDto deleteUsuario(Integer id) throws IOException {
+    public UsuarioDto deleteUsuario(Integer id)  {
         UsuarioDto usuarioDto = this.getUsuario(id);
         String url = "https://6285638196bccbf32d622180.mockapi.io/api/v1/users/"+ Integer.toString(id);
         restTemplate.delete(url);
