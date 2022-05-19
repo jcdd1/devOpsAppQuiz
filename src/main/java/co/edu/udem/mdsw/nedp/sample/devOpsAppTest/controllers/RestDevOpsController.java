@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -28,17 +29,17 @@ public class RestDevOpsController {
     }
 
     @PostMapping(value = "/usuarios/", produces = "application/json")
-    public ResponseEntity<UsuarioDto> saveUsuarios(@RequestBody UsuarioDto usuarioDto){
+    public ResponseEntity<UsuarioDto> saveUsuarios(@RequestBody UsuarioDto usuarioDto) throws IOException{
         return ResponseEntity.ok().body(manejoUsuarioService.saveUsuarios(usuarioDto));
     }
 
     @PostMapping(value = "/usuarios/", produces = "application/json")
-    public ResponseEntity<UsuarioDto> updateUsuario(@RequestBody UsuarioDto usuarioDto){
+    public ResponseEntity<UsuarioDto> updateUsuario(@RequestBody UsuarioDto usuarioDto) throws IOException{
         return ResponseEntity.ok().body(manejoUsuarioService.updateUsuario(usuarioDto));
     }
 
     @DeleteMapping(value = "/usuarios/{id}", produces = "application/json")
-    public ResponseEntity<UsuarioDto> deleteUsuario(@PathVariable Integer id){
+    public ResponseEntity<UsuarioDto> deleteUsuario(@PathVariable Integer id) throws IOException{
         return ResponseEntity.ok().body(manejoUsuarioService.deleteUsuario(id));
     }
 
